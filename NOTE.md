@@ -11,7 +11,20 @@ Khái niệm database được sử dụng rộng rãi hiện nay nếu gọi m�
 - Các relational database đều sử dụng SQL để tương tác với dữ liệu.
 Các hệ quản trị cơ sở dữ liệu quan hệ khác nhau không khác nhau về câu query mà sự khác biệt đến từ các tính năng của từng loại như độ bảo mật, performance, user management trong DMS đó.
 
+### MySQL
 
+- SIGNED vs UNSIGNED 
+
+https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and-when-to-use-it/3895705#3895705
+- Strict mode vs non strict mode
+    + check strict mode or not: SHOW VARIABLES LIKE ’sql_mode’, if the mode show this one ‘STRICT_TRANS_TABLES’ -> mySQL is in strict mode;
+    + disable strict mode: set global sql_mode=“”, hoặc 1 mode nào đó khác ’STRICT_TRANS_TABLES’;
+    + enable strict mode: set global sql_mode=’STRICT_TRANS_TABLES’;
+    + Stop Mysql Mac OS High Sierria: sudo launchctl unload -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
+    + Start MySql Mac OS High Sierria: sudo launchctl load -F /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
+    + When restarting mysql server, it will be run with default config (when my.cnf file is not created). When have my.cnf file, it will load the config in my.cnf file. Config file and its affected scope are listed here: https://dev.mysql.com/doc/refman/5.6/en/option-files.html table 4.2.
+- NOT NULL DEFAULT ’some value’, cấu trúc này đi cùng với nhau để khi không INSERT giá trị, vẫn có giá trị default, nhưng cũng không thể INSERT giá trị NULL thủ công (manually) qua câu lệnh INSERT
+- By default, WHERE condition with text is case insensitive (SELECT * FROM cats WHERE name=‘Egg’ === SELECT * FROM cats WHERE name=‘EGG’);
 
 
 
