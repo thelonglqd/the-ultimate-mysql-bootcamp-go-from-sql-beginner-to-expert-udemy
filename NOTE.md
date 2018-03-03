@@ -25,6 +25,9 @@ https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and
     + When restarting mysql server, it will be run with default config (when my.cnf file is not created). When have my.cnf file, it will load the config in my.cnf file. Config file and its affected scope are listed here: https://dev.mysql.com/doc/refman/5.6/en/option-files.html table 4.2.
 - NOT NULL DEFAULT ’some value’, cấu trúc này đi cùng với nhau để khi không INSERT giá trị, vẫn có giá trị default, nhưng cũng không thể INSERT giá trị NULL thủ công (manually) qua câu lệnh INSERT
 - By default, WHERE condition with text is case insensitive (SELECT * FROM cats WHERE name=‘Egg’ === SELECT * FROM cats WHERE name=‘EGG’);
+- LIMIT 5  actually is LIMIT 0, 5. From where to where with zero index.
+- To get from fifth to the end, we use a gigantic number at the end with LIMIT
+    LIMIT 5, 1238948932432473247236473264782364
 
 
 
