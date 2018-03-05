@@ -38,6 +38,8 @@ https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and
     -- SELECT title FROM books WHERE title LIKE '%\%%'; -> query all title that contains character %
     -- SELECT title FROM books WHERE title LIKE '%\_%'; -> query all title that contains character _
 
+- GROUP BY summarizes or aggregates identical data into single rows
+
 
 
 
