@@ -29,6 +29,10 @@ https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and
 - To get from fifth to the end, we use a gigantic number at the end with LIMIT
     LIMIT 5, 1238948932432473247236473264782364
 
+- By default, LIKE is case insensitive LIKE 'a' the same with LIKE 'A'
+- LIKE '%something' search for something that ends with 'something'
+- LIKE 'something%' search for something that starts with 'something'
+- LIKE '%something%' search for something that contains 'something'
 
 
 
