@@ -33,6 +33,10 @@ https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and
 - LIKE '%something' search for something that ends with 'something'
 - LIKE 'something%' search for something that starts with 'something'
 - LIKE '%something%' search for something that contains 'something'
+- When querying with LIKE, if need to find data that contains special (SQL patterns keyword) characters like '%' and '_'. Use escape character
+    Ex: 
+    -- SELECT title FROM books WHERE title LIKE '%\%%'; -> query all title that contains character %
+    -- SELECT title FROM books WHERE title LIKE '%\_%'; -> query all title that contains character _
 
 
 
