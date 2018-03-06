@@ -46,6 +46,8 @@ https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and
 
 - If the data you want to store has fixed length (state abbreviation: CA, NY, etc --- Yes/No flag: Y/N --- Sex: M/F) Use CHAR because CHAR is faster for fixed length text
 
+- If strict SQL mode is not enabled and you assign a value to a CHAR or VARCHAR column that exceeds the column's maximum length, the value is truncated to fit and a warning is generated. If SQL strict mode is enabled, the exceeded data can not be inserted, and an error is generated.
+
 
 
 
