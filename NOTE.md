@@ -63,6 +63,12 @@ By default, WHERE condition with text is case insensitive (SELECT * FROM cats WH
 - DECIMAL(5,2) will results in a number with total digits are 5 and 2 digits after the decimal point (ex: 999.99, 123.45, etc).
 - When the inserted number is too large, it will insert the maximum number it can (ex: data type is DECIMAL(5,2), inserted value is 1234567 -> 999.99 will be inserted instead)
 
+- DECIMAL data type is fixed-point types and calculations are exact. In MySQL, DECIMAL has several synonyms: NUMERIC, DEC, FIXED. The integer types alse are exact value types.
+
+#### FLOAT and DOUBLE
+- Not like DECIMAL, FLOAT and DOUBLE are floating-point and calculations are approximate. In MySQL, types that are synonyms with FLOAT and DOUBLE are DOUBLE PRECISION and REAL.
+
+- FLOAT and DOUBLE's advantages are storing larger numbers using less space.
 
 
 
