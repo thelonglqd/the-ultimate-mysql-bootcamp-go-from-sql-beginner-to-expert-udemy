@@ -40,6 +40,12 @@ https://stackoverflow.com/questions/3895692/what-does-unsigned-in-mysql-mean-and
 
 - GROUP BY summarizes or aggregates identical data into single rows
 
+- CHAR is always fixed length. For example, if title of book is CHAR(5), it always has 5 chracter, if longer, it will be truncated, if shorter, spaces will be added. CHAR length range is from 0 to 255.
+
+- When retrieving CHAR data type, the padded spaces are removed. Unless, the PAD_CHAR_FULL_LENGTH SQL mode is enabled.
+
+- If the data you want to store has fixed length (state abbreviation: CA, NY, etc --- Yes/No flag: Y/N --- Sex: M/F) Use CHAR because CHAR is faster for fixed length text
+
 
 
 
