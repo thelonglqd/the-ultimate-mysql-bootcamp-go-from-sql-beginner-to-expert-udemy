@@ -70,6 +70,11 @@ By default, WHERE condition with text is case insensitive (SELECT * FROM cats WH
 
 - FLOAT and DOUBLE's advantages are storing larger numbers using less space.
 
+### DATE - TIME - DATETIME
+- CURDATE() gives current date
+- CURTIME() gives current time
+- NOW() gives current date time
+
 
 
 
