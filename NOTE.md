@@ -70,10 +70,15 @@ By default, WHERE condition with text is case insensitive (SELECT * FROM cats WH
 
 - FLOAT and DOUBLE's advantages are storing larger numbers using less space.
 
-### DATE - TIME - DATETIME
+### DATE - TIME - DATETIME - TIMESTAMPS
 - CURDATE() gives current date
 - CURTIME() gives current time
 - NOW() gives current date time
+- DATETIME type is used for values that contain both date and time parts. MySQL retrieves and displays DATETIME values in 'YYYY-MM-DD HH:MM:SS' format. The supported range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+- The TIMESTAMP data type is used for values that contain both date and time parts, TIMESTAMP has a range of '1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07'.
+
+- TIMESTAMP consume less memory than DATETIME (4 vs 8 bytes)
+- changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP and changed_at TIMESTAMP DEFAULT NOW() ON UPDATE NOW() does the exact same thing
 
 
 
