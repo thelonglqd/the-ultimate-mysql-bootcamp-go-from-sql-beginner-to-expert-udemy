@@ -80,6 +80,21 @@ By default, WHERE condition with text is case insensitive (SELECT * FROM cats WH
 - TIMESTAMP consume less memory than DATETIME (4 vs 8 bytes)
 - changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP and changed_at TIMESTAMP DEFAULT NOW() ON UPDATE NOW() does the exact same thing
 
+### LOGCICAL OPERATORS
+- When using between with date/datetime/time value, use CAST() to convert to one of these data type for consistence
+- With this solution when selecting all books written in even year in range 2000 - 2016
+SELECT title, released_year FROM books
+WHERE released_year NOT IN (2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016)
+ORDER BY released_year;
+
+Using IN means, every released_year of each record will be compare with each numbers in range (not good for performance)
+
+Another solution is using "%"
+SELECT title, released_year FROM books
+WHERE released_year % 2 != 1;
+
+This query has better solution because with each record it has to be perform 1 compare (%2 != 1)
+
 
 
 
