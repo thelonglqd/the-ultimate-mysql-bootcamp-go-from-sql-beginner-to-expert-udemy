@@ -15,6 +15,7 @@ CREATE TABLE orders (
   amount DECIMAL(8, 2),
   customer_id INT,
   FOREIGN KEY (customer_id) REFERENCES customers(id)
+  ON DELETE CASCADE
 );
 
 INSERT INTO customers (first_name, last_name, email)

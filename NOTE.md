@@ -96,8 +96,7 @@ WHERE released_year % 2 != 1;
 This query has better solution because with each record it has to be perform 1 compare (%2 != 1)
 
 ### Realtionship
-- ONE TO MANY:
-    +  
+- When We want to delete one record and all of its dependencies records, use 'ON DELETE CASCADE'
 
 
 
