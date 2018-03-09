@@ -39,3 +39,22 @@ FROM series
 INNER JOIN reviews
   ON series.id = reviews.series_id
 GROUP BY genre;
+
+-- Challenge 6
+SELECT
+  reviewers.id,
+  first_name,
+  last_name,
+  COUNT(rating) AS COUNT,
+  MIN(IFNULL(rating, 0)) AS MIN,
+  MAX(IFNULL(rating, 0)) AS MAX,
+  AVG(IFNULL(rating, 0)) AS AVG,
+  CASE
+    WHEN COUNT(rating) = 0 THEN 'INACTIVE'
+    ELSE 'ACTIVE'
+  END AS STATUS
+FROM reviewers
+LEFT JOIN reviews
+  ON reviewers.id = reviews.reviewer_id
+GROUP BY reviewers.id;
+
