@@ -97,6 +97,7 @@ This query has better solution because with each record it has to be perform 1 c
 
 ### Realtionship
 - When We want to delete one record and all of its dependencies records, use 'ON DELETE CASCADE'
+- A LEFT JOIN B = B RIGHT JOIN A, returns the same result
 
 
 
