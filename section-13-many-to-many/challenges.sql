@@ -46,15 +46,24 @@ SELECT
   first_name,
   last_name,
   COUNT(rating) AS COUNT,
-  MIN(IFNULL(rating, 0)) AS MIN,
-  MAX(IFNULL(rating, 0)) AS MAX,
-  AVG(IFNULL(rating, 0)) AS AVG,
-  CASE
-    WHEN COUNT(rating) = 0 THEN 'INACTIVE'
-    ELSE 'ACTIVE'
-  END AS STATUS
+  IFNULL(MIN(rating), 0) AS MIN,
+  IFNULL(MAX(rating), 0) AS MAX,
+  ROUND(IFNULL(AVG(rating), 0), 2) AS AVG,
+  IF(COUNT(rating) >= 1, 'ACTIVE', 'INACTIVE') AS STATUS
 FROM reviewers
 LEFT JOIN reviews
   ON reviewers.id = reviews.reviewer_id
 GROUP BY reviewers.id;
+
+-- Challenge 7 JOIN all tables
+SELECT
+  title,
+  rating,
+  CONCAT(first_name, ' ', last_name) AS reviewer
+FROM reviewers
+INNER JOIN reviews
+  ON reviewers.id = reviews.reviewer_id
+INNER JOIN series
+  ON series.id = reviews.series_id;
+
 
