@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS comments, photos, users;
+DROP TABLE IF EXISTS likes, comments, photos, users;
 
 -- users table
 CREATE TABLE users (
@@ -47,4 +47,19 @@ VALUES
 ('Meow!', 1, 2),
 ('Amazing shot', 3, 2),
 ('I <3 this', 2, 1);
+
+-- likes table
+CREATE TABLE likes (
+  user_id INT NOT NULL,
+  photo_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (photo_id) REFERENCES photos(id),
+  PRIMARY KEY (user_id, photo_id)
+);
+
+-- seed data for likes
+INSERT INTO likes (user_id, photo_id)
+VALUES
+(1, 1), (2, 1), (1, 2), (1, 3), (3, 3);
 
