@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS likes, comments, photos, users;
+DROP TABLE IF EXISTS follows, likes, comments, photos, users;
 
 -- users table
 CREATE TABLE users (
@@ -62,4 +62,19 @@ CREATE TABLE likes (
 INSERT INTO likes (user_id, photo_id)
 VALUES
 (1, 1), (2, 1), (1, 2), (1, 3), (3, 3);
+
+-- following/followers schema
+CREATE TABLE follows (
+  follower_id INT NOT NULL,
+  followee_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY (follower_id) REFERENCES users(id),
+  FOREIGN KEY (followee_id) REFERENCES users(id),
+  PRIMARY KEY (follower_id, followee_id)
+);
+
+-- seed data for follows
+INSERT INTO follows (follower_id, followee_id)
+VALUES
+(1, 2), (1, 3), (3, 1), (2, 3);
 
