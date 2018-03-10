@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS photos, users;
+DROP TABLE IF EXISTS comments, photos, users;
 
 -- users table
 CREATE TABLE users (
@@ -9,7 +9,7 @@ CREATE TABLE users (
 -- seed data for users
 INSERT INTO users (username) VALUES ('BlueTheCat'), ('CharlieBrown'), ('ColtSteele');
 
--- photos
+-- photos table
 CREATE TABLE photos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   image_url VARCHAR(255) NOT NULL,
@@ -29,3 +29,22 @@ VALUES
 -- FROM users
 -- JOIN photos
 --   ON users.id = photos.user_id;
+
+-- comments table
+CREATE TABLE comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  comment_text VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW(),
+  user_id INT NOT NULL,
+  photo_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (photo_id) REFERENCES photos(id)
+);
+
+-- seed data for comments
+INSERT INTO comments (comment_text, user_id, photo_id)
+VALUES
+('Meow!', 1, 2),
+('Amazing shot', 3, 2),
+('I <3 this', 2, 1);
+
