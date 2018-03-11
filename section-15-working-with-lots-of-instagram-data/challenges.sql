@@ -21,3 +21,10 @@ WHERE registration_times = (
   ) AS registration_summary2
 );
 
+-- Challenge 3: Find all users have never posted a photo
+SELECT username, image_url
+FROM users
+LEFT JOIN photos
+  ON users.id = photos.user_id
+WHERE photos.image_url IS NULL;
+
