@@ -99,6 +99,10 @@ This query has better solution because with each record it has to be perform 1 c
 - When We want to delete one record and all of its dependencies records, use 'ON DELETE CASCADE'
 - A LEFT JOIN B = B RIGHT JOIN A, returns the same result
 
+### Instagram clone DB
+- Tagging design schema performance test:
+http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/
+
 
 
 
