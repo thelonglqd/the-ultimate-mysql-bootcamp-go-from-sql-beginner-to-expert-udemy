@@ -102,6 +102,8 @@ This query has better solution because with each record it has to be perform 1 c
 ### Instagram clone DB
 - Tagging design schema performance test:
 http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/
+- How to select the first/least/max row per group in SQL
+https://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
 
 
 

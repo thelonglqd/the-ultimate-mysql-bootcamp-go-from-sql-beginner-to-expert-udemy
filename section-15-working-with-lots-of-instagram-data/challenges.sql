@@ -28,3 +28,19 @@ LEFT JOIN photos
   ON users.id = photos.user_id
 WHERE photos.image_url IS NULL;
 
+-- Challenge 4: Who get the most likes on a single photo
+SELECT
+  username,
+  likes.photo_id,
+  COUNT(likes.photo_id) AS 'total_likes'
+FROM photos
+JOIN users
+  ON photos.user_id = users.id 
+JOIN likes
+  ON photos.id = likes.photo_id
+GROUP BY likes.photo_id
+ORDER BY total_likes DESC
+LIMIT 1;
+
+-- ORDER BY total_likes DESC;
+
