@@ -105,6 +105,12 @@ http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/
 - How to select the first/least/max row per group in SQL
 https://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
 
+### MySQL Errors
+MySQL errors contain
+- A numeric code (1146). This number is MySQL-specific
+- A five-characters SQLSTATE value ('42S02').
+The values are taken from ANSI SQL and ODBC and are more standardized
 
+- A message string - textual description of the error
 
 
