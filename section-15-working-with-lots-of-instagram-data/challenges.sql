@@ -42,5 +42,16 @@ GROUP BY likes.photo_id
 ORDER BY total_likes DESC
 LIMIT 1;
 
--- ORDER BY total_likes DESC;
-
+-- Challenge 5: How many times does the average user post
+-- Solution 1:
+SELECT AVG(SQResult.post_count) FROM (
+  SELECT
+  username,
+  COUNT(photos.id) AS 'post_count'
+  FROM users
+  LEFT JOIN photos
+    ON users.id = photos.user_id
+  GROUP BY users.username
+) AS SQResult;
+-- Solution 2:
+SELECT (SELECT COUNT(*) FROM photos) / (SELECT COUNT(*) FROM users) AS 'AVG';
