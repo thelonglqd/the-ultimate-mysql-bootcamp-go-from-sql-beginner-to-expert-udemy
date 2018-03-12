@@ -55,3 +55,14 @@ SELECT AVG(SQResult.post_count) FROM (
 ) AS SQResult;
 -- Solution 2:
 SELECT (SELECT COUNT(*) FROM photos) / (SELECT COUNT(*) FROM users) AS 'AVG';
+
+-- Challenge 6: Which is the most commonly hashtags
+SELECT
+  tag_name,
+  COUNT(tags.id) AS total
+FROM tags
+JOIN photo_tags
+  ON tags.id = photo_tags.tag_id
+GROUP BY tags.id
+ORDER BY total DESC
+LIMIT 5;
